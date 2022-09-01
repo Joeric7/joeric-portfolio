@@ -1,26 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Press+Start+2P&family=Silkscreen&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --main-heading-font: 'Press Start 2P';
+    --heading-font: 'Silkscreen';
+    --paragraph-font: 'Crimson Text';
+    --light-mode-color: 'black';
+    --ligth-mode-background: 'white';
+    --light-mode-color: 'white';
+    --ligth-mode-background: 'black';
+}
+
+/* global styles */
+
+p {
+    max-width: 60ch;
+    color: var(--light-mode-color);
+    font: var(--paragraph-font);
+}
+
+h1 {
+    color: var(--light-mode-color);
+    font-family: var(--main-heading-font);
+    text-transform: capitalize;
+}
+
+h2 {
+    color: var(--light-mode-color);
+    font-family: var(--heading-font);
+}
+
 li {
     list-style: none;
 }
 
+section {
+    margin: 3rem;
+}
+
+section h2 {
+    margin-bottom: .6rem;
+}
+
+/* navbar styles */
+
 nav a {
     text-decoration: none;
     text-transform: capitalize;
+    color: white;
 }
 
 nav {
     display: flex;
     width: 100%;
+    height: 50px;
+    background-color: black;
 }
 
 nav ul {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 70%;
 }
 
@@ -28,8 +73,119 @@ nav ul {
     display: flex;
     width: 30%;
     justify-content: flex-end;
+    align-items: center;    
 }
 
 #menu {
+    filter: invert();
     margin-right: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;   
+}
+
+#menu img {
+    transition: transform 1s ease-in-out;
+}
+
+#menu:hover img{
+    transform: rotate(360deg);
+}
+
+/* hero and banner styles */
+
+#hero {
+    display: flex;
+    flex-wrap: wrap;
+    height: 30rem;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+#slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-container {
+    display: flex;
+    height: 10rem;
+    width: 10rem;
+    margin: 0 7px 0 0;
+    background-color: red;
+    overflow: hidden;
+}
+
+/* about me styles */
+
+.about-me {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    column-gap: 4rem;
+}
+
+.circle-image {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    padding: 30px;
+    border: 4px solid black;
+}
+
+.circle-image img {
+    height: auto;
+    width: 100%;
+}
+
+/* tech section styles */
+
+.tech-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.technology-card {
+    height: 13rem;
+}
+
+.technology-card img {
+    width: auto;
+    height: 100%;
+}
+
+/* proyects section style */
+
+.proyects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 2rem;
+}
+
+.proyects-container div {
+    width: 20rem;
+    height: 15rem;
+    background-color: antiquewhite;
+}
+
+/* contact */
+
+.button-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+/*footer style*/
+
+footer {
+    background-color: aliceblue;
+    height: 6rem;
+    width: 100%;
 }
