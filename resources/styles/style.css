@@ -10,28 +10,20 @@
     --main-heading-font: 'Press Start 2P';
     --heading-font: 'Silkscreen';
     --paragraph-font: 'Crimson Text';
-    --light-mode-color: 'black';
-    --ligth-mode-background: 'white';
-    --light-mode-color: 'white';
-    --ligth-mode-background: 'black';
 }
 
 /* global styles */
 
 p {
     max-width: 60ch;
-    color: var(--light-mode-color);
-    font: var(--paragraph-font);
 }
 
 h1 {
-    color: var(--light-mode-color);
     font-family: var(--main-heading-font);
     text-transform: capitalize;
 }
 
 h2 {
-    color: var(--light-mode-color);
     font-family: var(--heading-font);
 }
 
