@@ -22,6 +22,8 @@ p {
 h1 {
     font-family: var(--main-heading-font), cursive;
     text-transform: capitalize;
+    background-color: rgba(245, 245, 245, 0.527);
+    padding: 10px;
 }
 
 h2 {
@@ -112,6 +114,8 @@ nav a:hover {
     height: 30rem;
     align-items: center;
     justify-content: space-around;
+    background-image: url(/resources/imgs/hero-img.jpg);
+    background-size: cover;
 
 }
 
@@ -121,12 +125,18 @@ nav a:hover {
     justify-content: center;
 }
 
+#slider > img {
+    filter: invert();
+    opacity: .8;
+    cursor: pointer;
+}
+
 .img-container {
     display: flex;
-    height: 10rem;
-    width: 10rem;
+    height: 14rem;
+    width: 14rem;
     margin: 0 7px 0 0;
-    background-color: red;
+    /* background-color: red; */
     overflow: hidden;
 }
 
