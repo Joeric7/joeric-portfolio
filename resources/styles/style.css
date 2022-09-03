@@ -28,9 +28,12 @@ p {
 }
 
 h1 {
+    color: white;
     font-family: var(--main-heading-font), cursive;
     text-transform: capitalize;
-    background-color: rgba(245, 245, 245, 0.527);
+    background-color: rgba(245, 245, 245, 0.3);
+    backdrop-filter: blur(5px);
+    background-blend-mode: multiply;
     padding: 10px;
 }
 
