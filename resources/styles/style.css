@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Press+Start+2P&family=Silkscreen&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +10,7 @@
     --main-heading-font: 'Press Start 2P';
     --heading-font: 'Silkscreen';
     --paragraph-font: 'Josefin Sans';
+    scroll-behavior: smooth;
 }
 
 /* global styles */
@@ -28,6 +30,14 @@ h1 {
 
 h2 {
     font-family: var(--heading-font), cursive;
+}
+
+.proyects-section h2,
+.tech-section h2 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 3rem;
 }
 
 li {
@@ -150,17 +160,15 @@ nav a:hover {
     column-gap: 4rem;
 }
 
-.circle-image {
+.circle-img {
+    margin-top: 2rem;
     width: 15rem;
     height: 15rem;
     border-radius: 50%;
     padding: 30px;
     border: 4px solid black;
-}
-
-.circle-image img {
-    height: auto;
-    width: 100%;
+    background-image: url(/resources/imgs/con-un-abanico.jpeg);
+    background-size: cover;
 }
 
 /* tech section styles */
@@ -169,6 +177,7 @@ nav a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    row-gap: 4rem;
 }
 
 .technology-card {
