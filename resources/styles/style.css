@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Press+Start+2P&family=Silkscreen&display=swap');
 
+/* https://coolors.co/b81200-050517-17a398 */
+
 *,
 *::after,
 *::before {
@@ -12,6 +14,9 @@
     --main-heading-font: 'Press Start 2P';
     --heading-font: 'Silkscreen';
     --paragraph-font: 'Josefin Sans';
+    --main-color: #c9001b;
+    --seccondary-color: #f5dce0;
+    --accent-color: #db5b00;
     scroll-behavior: smooth;
     color-scheme: dark;
 }
@@ -19,10 +24,10 @@
 /* global styles */
 
 
-body {
+/* body {
     background-color: #000000;
 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='435' height='435' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23050538' stroke-width='4'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23081531'%3E%3Ccircle cx='769' cy='229' r='11'/%3E%3Ccircle cx='539' cy='269' r='11'/%3E%3Ccircle cx='603' cy='493' r='11'/%3E%3Ccircle cx='731' cy='737' r='11'/%3E%3Ccircle cx='520' cy='660' r='11'/%3E%3Ccircle cx='309' cy='538' r='11'/%3E%3Ccircle cx='295' cy='764' r='11'/%3E%3Ccircle cx='40' cy='599' r='11'/%3E%3Ccircle cx='102' cy='382' r='11'/%3E%3Ccircle cx='127' cy='80' r='11'/%3E%3Ccircle cx='370' cy='105' r='11'/%3E%3Ccircle cx='578' cy='42' r='11'/%3E%3Ccircle cx='237' cy='261' r='11'/%3E%3Ccircle cx='390' cy='382' r='11'/%3E%3C/g%3E%3C/svg%3E");
-}
+} */
 
 p {
     max-width: 60ch;
@@ -31,13 +36,12 @@ p {
 }
 
 h1 {
-    color: white;
+    color: var(--seccondary-color);
     font-family: var(--main-heading-font), cursive;
     text-transform: capitalize;
-    background-color: rgba(245, 245, 245, 0.3);
+    border-radius: 100vmax;
     backdrop-filter: blur(5px);
-    background-blend-mode: multiply;
-    padding: 10px;
+    padding: 15px;
 }
 
 h2 {
@@ -66,11 +70,19 @@ section h2 {
 
 /* navbar styles */
 
+.navgap {
+    height: 50px;
+    width: 100%;
+}
+
 nav {
     display: flex;
     width: 100%;
     height: 50px;
-    background-color: black;
+    position: fixed;
+    background-color: var(--main-color);
+    z-index: 99;
+    top: 0;
 }
 
 nav a {
@@ -78,12 +90,12 @@ nav a {
     align-items: center;
     width: 100%;
     height: 100%;
+    color: var(--seccondary-color);
     position: relative;
     text-decoration: none;
     text-transform: capitalize;
     font-family: var(--paragraph-font), sans-serif;
     font-size: 1.2rem;
-    color: white;
     overflow: hidden;
 }
 
@@ -107,7 +119,7 @@ nav li a::before {
     width: 100%;
     height: 2px;
     border-radius: 5px;
-    background-color: white;
+    background-color: var(--seccondary-color);
     bottom: 14px;
     right: -100%;
     transition: all 400ms;
@@ -125,18 +137,19 @@ nav li:hover a::before {
 }
 
 #menu {
-    filter: invert();
     margin-right: 30px;
     background: none;
     border: none;
-    cursor: pointer;   
+    cursor: pointer;
+    border-radius: 10px;   
 }
 
-#menu img {
+#menu svg {
     transition: transform 1s ease-in-out;
+    color: var(--seccondary-color);
 }
 
-#menu:hover img{
+#menu:hover svg{
     transform: rotate(360deg);
 }
 
@@ -159,9 +172,8 @@ nav li:hover a::before {
     justify-content: center;
 }
 
-#slider > img {
-    filter: invert();
-    opacity: .8;
+#slider > svg {
+    color: var(--accent-color);
     cursor: pointer;
 }
 
@@ -190,7 +202,7 @@ nav li:hover a::before {
     height: 15rem;
     border-radius: 50%;
     padding: 30px;
-    border: 4px solid black;
+    border: 4px solid var(--accent-color);
     background-image: url(/resources/imgs/con-un-abanico.jpeg);
     background-size: cover;
 }
@@ -223,11 +235,22 @@ nav li:hover a::before {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: black;
-    color: transparent;
+    color: #ffffff00;
     position: absolute;
     bottom: -100%;
     transition: transform 1s ease, color 500ms 1s;
+}
+
+.tech-info.high {
+    background-color: hsla(120, 84%, 50%, 0.87);
+}
+
+.tech-info.intermediate {
+    background-color: hsla(39, 99%, 46%, 0.87);
+}
+
+.tech-info.low {
+    background-color: hsla(0, 91%, 31%, 0.87);
 }
 
 .technology-card:hover .tech-info {
@@ -262,7 +285,7 @@ nav li:hover a::before {
 /*footer style*/
 
 footer {
-    background-color: aliceblue;
+    background-color: var(--main-color);
     height: 6rem;
     width: 100%;
 }
