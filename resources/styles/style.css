@@ -14,9 +14,9 @@
     --main-heading-font: 'Press Start 2P';
     --heading-font: 'Silkscreen';
     --paragraph-font: 'Josefin Sans';
-    --main-color: #c9001b;
-    --seccondary-color: #f5dce0;
-    --accent-color: #db5b00;
+    --main-color: #b3051c;
+    --seccondary-color: maroon;
+    --accent-color: #05B39C;
     scroll-behavior: smooth;
     color-scheme: dark;
 }
@@ -36,7 +36,7 @@ p {
 }
 
 h1 {
-    color: var(--seccondary-color);
+    color: whitesmoke;
     font-family: var(--main-heading-font), cursive;
     text-transform: capitalize;
     border-radius: 100vmax;
@@ -90,7 +90,7 @@ nav a {
     align-items: center;
     width: 100%;
     height: 100%;
-    color: var(--seccondary-color);
+    color: whitesmoke;
     position: relative;
     text-decoration: none;
     text-transform: capitalize;
@@ -118,9 +118,9 @@ nav li a::before {
     position: absolute;
     width: 100%;
     height: 2px;
-    border-radius: 5px;
-    background-color: var(--seccondary-color);
-    bottom: 14px;
+    border-radius: 40%;
+    background-color: whitesmoke;
+    bottom: 13px;
     right: -100%;
     transition: all 400ms;
 }
@@ -145,12 +145,17 @@ nav li:hover a::before {
 }
 
 #menu svg {
-    transition: transform 1s ease-in-out;
-    color: var(--seccondary-color);
+    color: whitesmoke;
 }
 
-#menu:hover svg{
-    transform: rotate(360deg);
+#menu:focus svg{
+    animation: rotate 1s ease-in-out;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* hero and banner styles */
@@ -202,7 +207,7 @@ nav li:hover a::before {
     height: 15rem;
     border-radius: 50%;
     padding: 30px;
-    border: 4px solid var(--accent-color);
+    border: 5px solid var(--main-color);
     background-image: url(/resources/imgs/con-un-abanico.jpeg);
     background-size: cover;
 }
@@ -281,6 +286,49 @@ nav li:hover a::before {
     justify-content: center;
     margin-bottom: 2rem;
 }
+
+.button-container a {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: white;
+    font-family: var(--paragraph-font);
+    transition: color 1.5s 100ms;
+}
+
+.contact-button {
+    position: relative;
+    padding: 15px 30px;
+    background-color: transparent;
+    border: 4px solid var(--accent-color);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.contact-button::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent-color);
+    left: -100%;
+    top: 0;
+    z-index: -1;
+    transition: left 900ms, background-color 300ms;
+
+}
+
+.contact-button:hover::before,
+.contact-button:hover a {
+    left: 0;
+    color: black;
+}
+
+.contact-button:active::before {
+    background-color: #c9001b;
+}
+
 
 /*footer style*/
 
