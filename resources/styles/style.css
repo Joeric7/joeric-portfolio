@@ -14,9 +14,9 @@
     --main-heading-font: 'Press Start 2P';
     --heading-font: 'Silkscreen';
     --paragraph-font: 'Josefin Sans';
-    --main-color: #b3051c;
+    --main-color: black;  
     --seccondary-color: maroon;
-    --accent-color: #05B39C;
+    --accent-color: #b3051c;
     scroll-behavior: smooth;
     color-scheme: dark;
 }
@@ -148,14 +148,12 @@ nav li:hover a::before {
     color: whitesmoke;
 }
 
-#menu:focus svg{
+#menu:focus-within svg{
     animation: rotate 1s ease-in-out;
 }
 
 @keyframes rotate {
-    100% {
-        transform: rotate(360deg);
-    }
+    100% { transform: rotate(360deg); }
 }
 
 /* hero and banner styles */
@@ -187,7 +185,6 @@ nav li:hover a::before {
     height: 14rem;
     width: 14rem;
     margin: 0 7px 0 0;
-    /* background-color: red; */
     overflow: hidden;
 }
 
@@ -207,7 +204,7 @@ nav li:hover a::before {
     height: 15rem;
     border-radius: 50%;
     padding: 30px;
-    border: 5px solid var(--main-color);
+    border: 5px solid var(--accent-color);
     background-image: url(/resources/imgs/con-un-abanico.jpeg);
     background-size: cover;
 }
@@ -292,7 +289,7 @@ nav li:hover a::before {
     text-decoration: none;
     text-transform: uppercase;
     font-size: 1.5rem;
-    color: white;
+    color: var(--accent-color);
     font-family: var(--paragraph-font);
     transition: color 1.5s 100ms;
 }
@@ -322,11 +319,11 @@ nav li:hover a::before {
 .contact-button:hover::before,
 .contact-button:hover a {
     left: 0;
-    color: black;
+    color: whitesmoke;
 }
 
 .contact-button:active::before {
-    background-color: #c9001b;
+    background-color: var(--seccondary-color);
 }
 
 
