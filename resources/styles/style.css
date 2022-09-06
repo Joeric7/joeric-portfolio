@@ -269,16 +269,49 @@ nav li:hover a::before {
     row-gap: 2rem;
 }
 
-.proyects-container div {
+.proyect-card {
+    display: flex;
+    position: relative;
+    align-items: center;
     width: 20rem;
     height: 12rem;
-    background-color: antiquewhite;
-    border-radius: 6px;
+    border-radius: 8px;
+    border: 2px solid black;
+    overflow: hidden;
 }
 
-.proyects-container div img {
+.proyect-card::before {
+    content: url(/resources/assets/got_to.svg);
+    display: grid;
+    place-content: center;
+    position: absolute;
+    width: 3.6rem;
+    aspect-ratio: 1;
+    background-color: white;
+    top: 0;
+    right: 0;
+    filter: invert();
+    border-radius: 0 0 0 50px;
+    cursor: pointer;
+}
+
+.proyect-card .quote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    height: 2rem;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    font-family: var(--paragraph-font);
+}
+
+.proyect-card img {
     width: 100%;
     height: 100%;
+    z-index: -1;
 }
 
 /* contact */
