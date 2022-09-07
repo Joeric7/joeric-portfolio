@@ -18,6 +18,7 @@
     --seccondary-color: maroon;
     --accent-color: #b3051c;
     scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
     color-scheme: dark;
 }
 
@@ -70,7 +71,7 @@ section h2 {
 
 /* navbar styles */
 
-.navgap {
+#navgap {
     height: 50px;
     width: 100%;
 }

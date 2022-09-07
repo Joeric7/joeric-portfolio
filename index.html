@@ -11,14 +11,14 @@
 
 <body>
     <header>
-        <div class="navgap"></div>
+        <div id="navgap"></div>
         <nav>
             <ul>
-                <li><a href="#">start</a></li>
-                <li><a href="#">about me</a></li>
-                <li><a href="#">technologies</a></li>
-                <li><a href="#">proyects</a></li>
-                <li><a href="#">contact</a></li>
+                <li><a href="#navgap">start</a></li>
+                <li><a href="#about">about me</a></li>
+                <li><a href="#tech">technologies</a></li>
+                <li><a href="#proyects">proyects</a></li>
+                <li><a href="#button">contact</a></li>
             </ul>
             <div class="menu-container">
                 <button id="menu"><svg xmlns="http://www.w3.org/2000/svg" height="48" width="48">
@@ -47,7 +47,7 @@
         </div>
     </header>
     <main>
-        <section class="about-me">
+        <section class="about-me" id="about">
             <div class="text-container">
                 <h2>Who I am?</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum iure dignissimos excepturi
@@ -60,7 +60,7 @@
             </div>
             <div class="circle-img"></div>
         </section>
-        <section class="tech-section">
+        <section class="tech-section" id="tech">
             <h2>Technologies</h2>
             <div class="tech-container">
                 <div class="technology-card">
@@ -89,7 +89,7 @@
                 </div>
             </div>
         </section>
-        <section class="proyects-section">
+        <section class="proyects-section" id="proyects">
             <h2>Proyects</h2>
             <div class="proyects-container">
                 <div class="proyect-card">
@@ -114,7 +114,7 @@
                 </div>
             </div>
         </section>
-        <div class="button-container">
+        <div class="button-container" id="button">
             <button class="contact-button">
                 <a href="contact.html">contact me!</a>
             </button>
