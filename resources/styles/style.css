@@ -189,6 +189,7 @@ section {
 #slider > svg {
     color: var(--accent-color);
     cursor: pointer;
+    z-index: 1;
 }
 
 .img-container {
@@ -196,7 +197,21 @@ section {
     height: 14rem;
     width: 14rem;
     margin: 0 7px 0 0;
-    /* overflow: hidden; */
+    overflow: hidden;
+}
+
+.img-container img {
+    position: relative;
+}
+
+@keyframes backward {
+    from {right: -100%;}
+    to {right: 0;}
+}
+
+@keyframes forward {
+    from {left: -100%;}
+    to {left: 0;}
 }
 
 /* about me styles */
