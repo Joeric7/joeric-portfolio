@@ -196,7 +196,7 @@ section {
     height: 14rem;
     width: 14rem;
     margin: 0 7px 0 0;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /* about me styles */
@@ -396,3 +396,4 @@ footer {
     width: 100%;
     font-family: var(--paragraph-font);
 }
+
