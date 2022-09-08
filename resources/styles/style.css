@@ -39,6 +39,7 @@ h1 {
 
 h2 {
     font-family: var(--heading-font), cursive;
+    margin-bottom: .6rem;
 }
 
 .proyects-section h2,
@@ -55,10 +56,6 @@ li {
 
 section {
     margin: 3rem;
-}
-
-section h2 {
-    margin-bottom: .6rem;
 }
 
 /* navbar styles */
