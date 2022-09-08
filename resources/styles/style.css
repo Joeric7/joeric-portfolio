@@ -76,7 +76,7 @@ section h2 {
     width: 100%;
 }
 
-nav {
+.main-nav {
     display: flex;
     width: 100%;
     height: 50px;
@@ -86,7 +86,7 @@ nav {
     top: 0;
 }
 
-nav a {
+.main-nav a {
     display: flex;
     align-items: center;
     width: 100%;
@@ -100,13 +100,13 @@ nav a {
     overflow: hidden;
 }
 
-nav li {
+.main-nav li {
     display: flex;
     align-items: center;
     height: 100%;
 }
 
-nav ul {
+.main-nav ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -114,7 +114,7 @@ nav ul {
     margin-left: 1rem;
 }
 
-nav li a::before {
+.main-nav li a::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -126,7 +126,7 @@ nav li a::before {
     transition: all 400ms;
 }
 
-nav li:hover a::before {
+.main-nav li:hover a::before {
     right: 0;
 } 
 
@@ -134,7 +134,25 @@ nav li:hover a::before {
     display: flex;
     width: 30%;
     justify-content: flex-end;
-    align-items: center;    
+    align-items: center;
+}
+
+.options-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    position: absolute;
+    top: -700%;
+    right: 1rem;
+    z-index: -1;
+    transition: all 1s;
+}
+
+.options-menu span {
+    padding: 20px 30px;
+    font-size: 1.3rem
 }
 
 #menu {
@@ -147,14 +165,16 @@ nav li:hover a::before {
 
 #menu svg {
     color: whitesmoke;
+    transition: all 1s;
 }
 
-#menu:focus-within svg{
-    animation: rotate 1s ease-in-out;
+#menu:focus svg{
+    rotate: 360deg;
 }
 
-@keyframes rotate {
-    100% { transform: rotate(360deg); }
+.menu-container:focus-within ~ .options-menu {
+    display: flex;
+    top: 100%;    
 }
 
 /* hero and banner styles */
