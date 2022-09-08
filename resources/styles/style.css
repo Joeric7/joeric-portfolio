@@ -186,10 +186,15 @@ section {
     justify-content: center;
 }
 
-#slider > svg {
+#slider svg {
     color: var(--accent-color);
     cursor: pointer;
     z-index: 1;
+}
+
+#slider button {
+    border: none;
+    background-color: transparent;
 }
 
 .img-container {
@@ -202,7 +207,9 @@ section {
 
 .img-container img {
     position: relative;
+    /* animation: fw 1s */
 }
+
 
 @keyframes backward {
     from {right: -100%;}
@@ -212,6 +219,18 @@ section {
 @keyframes forward {
     from {left: -100%;}
     to {left: 0;}
+}
+
+@keyframes fw {
+    100% {
+        transform: translate(100%);
+    }
+}
+
+@keyframes bw {
+    100% {
+        transform: translate(-100%);
+    }
 }
 
 /* about me styles */
