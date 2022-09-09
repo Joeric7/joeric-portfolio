@@ -40,24 +40,18 @@ const animateBackward = () => {
     setTimeout(slideBackward, 900);
 };
 
-let autoSlide = setInterval(() => {
-    animateForward();
-}, 3000)
+let autoSlide = setInterval(animateForward, 3000);
 
 arrowBack.addEventListener('click', () => {
     animateBackward();
     clearInterval(autoSlide);
-    autoSlide = setInterval(() => {
-        animateForward();
-    }, 5000)
+    autoSlide = setInterval(animateForward, 5000);
 });
 
 arrowForward.addEventListener('click', () => {
     animateForward();
     clearInterval(autoSlide);
-    autoSlide = setInterval(() => {
-        animateForward();
-    }, 5000)    
+    autoSlide = setInterval(animateForward, 5000);    
 });
 
 for (let i of imgList) {
