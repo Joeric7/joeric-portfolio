@@ -16,7 +16,6 @@ const activateButtons = () => {
     arrowForward.disabled = false;
 }
 
-
 const slideForward = () => {
     imgList[0].style.animation = '';
     imgContainer.appendChild(imgList[0]);
@@ -43,16 +42,24 @@ const animateBackward = (func) => {
     setTimeout(func, 900);
 };
 
-
+let miPansusu = setInterval(() => {
+    animateForward(slideForward);
+}, 3000)
 
 arrowBack.addEventListener('click', () => {
     animateBackward(slideBackward)
+    clearInterval(miPansusu);
+    miPansusu = setInterval(() => {
+        animateForward(slideForward);
+    }, 5000)
 });
 
 arrowForward.addEventListener('click', () => {
     animateForward(slideForward);
-    const imgContainer = document.querySelector('.img-container');
-    
+    clearInterval(miPansusu);
+    miPansusu = setInterval(() => {
+        animateForward(slideForward);
+    }, 5000)    
 });
 
 for (let i of imgList) {
