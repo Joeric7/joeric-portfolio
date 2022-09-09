@@ -2,7 +2,6 @@ const arrowBack = document.getElementById('arrow-back');
 const arrowForward = document.getElementById('arrow-forward');
 const imgContainer = document.querySelector('.img-container');
 
-
 let imgList = document.querySelectorAll('.img-container img');
 
 const blockButtons = () => {
@@ -10,7 +9,6 @@ const blockButtons = () => {
     arrowForward.disabled = true;
 }
 
-// blockButtons();
 const activateButtons = () => {
     arrowBack.disabled = false;
     arrowForward.disabled = false;
@@ -30,35 +28,35 @@ const slideBackward = () => {
     imgList[0].style.animation = 'backward 1s';
 };
 
-const animateForward = (func) => {
+const animateForward = () => {
     imgList[0].style.animation = '';
     imgList[0].style.animation = 'fw 1s';
-    setTimeout(func, 900);
+    setTimeout(slideForward, 900);
 };
 
-const animateBackward = (func) => {
+const animateBackward = () => {
     imgList[0].style.animation = '';
     imgList[0].style.animation = 'bw 1s';
-    setTimeout(func, 900);
+    setTimeout(slideBackward, 900);
 };
 
-let miPansusu = setInterval(() => {
-    animateForward(slideForward);
+let autoSlide = setInterval(() => {
+    animateForward();
 }, 3000)
 
 arrowBack.addEventListener('click', () => {
-    animateBackward(slideBackward)
-    clearInterval(miPansusu);
-    miPansusu = setInterval(() => {
-        animateForward(slideForward);
+    animateBackward();
+    clearInterval(autoSlide);
+    autoSlide = setInterval(() => {
+        animateForward();
     }, 5000)
 });
 
 arrowForward.addEventListener('click', () => {
-    animateForward(slideForward);
-    clearInterval(miPansusu);
-    miPansusu = setInterval(() => {
-        animateForward(slideForward);
+    animateForward();
+    clearInterval(autoSlide);
+    autoSlide = setInterval(() => {
+        animateForward();
     }, 5000)    
 });
 
