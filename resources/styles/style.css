@@ -13,7 +13,7 @@
     --heading-font: 'Silkscreen';
     --paragraph-font: 'Josefin Sans';
     --main-color: black;  
-    --seccondary-color: maroon;
+    --seccondary-color: white;
     --accent-color: #b3051c;
     scroll-behavior: smooth;
     scroll-padding-top: 4rem;
@@ -187,7 +187,8 @@ section {
 }
 
 #slider svg {
-    color: var(--accent-color);
+    filter: drop-shadow(0 0 4px);
+    color: whitesmoke;
     cursor: pointer;
     z-index: 1;
 }
@@ -197,6 +198,9 @@ section {
     background-color: transparent;
 }
 
+#slider button:active {
+    scale: 0.95;
+}
 .img-container {
     display: flex;
     height: 14rem;
@@ -249,7 +253,7 @@ section {
     height: 15rem;
     border-radius: 50%;
     padding: 30px;
-    border: 5px solid var(--accent-color);
+    border: 5px solid var(--seccondary-color);
     background-image: url(/resources/imgs/con-un-abanico.jpeg);
     background-size: cover;
 }
@@ -426,7 +430,7 @@ footer {
     flex-direction: column;
     background-color: var(--main-color);
     gap: 5px;
-    height: 6rem;
+    height: 4rem;
     width: 100%;
     font-family: var(--paragraph-font);
 }

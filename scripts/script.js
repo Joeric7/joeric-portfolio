@@ -40,7 +40,7 @@ const animateBackward = () => {
     setTimeout(slideBackward, 900);
 };
 
-let autoSlide = setInterval(animateForward, 3000);
+let autoSlide = setInterval(animateForward, 5000);
 
 arrowBack.addEventListener('click', () => {
     animateBackward();
