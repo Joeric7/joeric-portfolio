@@ -1,6 +1,10 @@
 const arrowBack = document.getElementById('arrow-back');
 const arrowForward = document.getElementById('arrow-forward');
 const imgContainer = document.querySelector('.img-container');
+const slide = {
+    node: document.getElementById('toggle-slide'),
+    state: true
+}
 
 let imgList = document.querySelectorAll('.img-container img');
 
@@ -42,16 +46,40 @@ const animateBackward = () => {
 
 let autoSlide = setInterval(animateForward, 5000);
 
-arrowBack.addEventListener('click', () => {
-    animateBackward();
+const toggleAutoSlide = () => {
+    if (slide.state === true) {
+        clearInterval(autoSlide);
+        slide.node.style.backgroundColor = 'gray';
+        slide.state = false;
+    } else {
+        autoSlide = setInterval(animateForward, 5000);
+        slide.node.style.backgroundColor = '';
+        slide.state = true;
+    }
+    console.log(slide.state)
+    console.log(slide.node)
+    console.log(autoSlide)
+}
+
+const resetInterval = () => {
     clearInterval(autoSlide);
     autoSlide = setInterval(animateForward, 5000);
+};
+
+arrowBack.addEventListener('click', () => {
+    animateBackward();
+    if (slide.state === true) {
+        resetInterval();
+    }
 });
+
+slide.node.addEventListener('click', toggleAutoSlide)
 
 arrowForward.addEventListener('click', () => {
     animateForward();
-    clearInterval(autoSlide);
-    autoSlide = setInterval(animateForward, 5000);    
+    if (slide.state === true) {
+        resetInterval();
+    }  
 });
 
 for (let i of imgList) {

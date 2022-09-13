@@ -22,6 +22,11 @@
 
 /* global styles */
 
+body {
+    background-attachment: fixed;
+    background-size: contain;
+}
+
 p {
     max-width: 60ch;
     font-size: 1.1rem;
@@ -138,11 +143,34 @@ section {
     top: -270px;
     right: 1rem;
     transition: all 1s;
+    top: 50px;
+    opacity: 1;
 }
 
-.options-menu span {
+.options-menu button {
+    border: 0;
+    background-color: transparent;
     padding: 20px 30px;
-    font-size: 1.3rem
+    font-size: 1.3rem;
+    cursor: pointer;
+    position: relative;
+    color: whitesmoke;
+    overflow: hidden;
+    transition: all 500ms;
+}
+
+.options-menu button:hover {
+    background-color: #413b3b;
+}
+
+.options-menu button+button::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    inset: 0;
+    height: 5px;
+    background-color: #181818;
+    outline: 3px solid #413b3b;
 }
 
 #menu {
@@ -201,6 +229,7 @@ section {
 #slider button:active {
     scale: 0.95;
 }
+
 .img-container {
     display: flex;
     height: 14rem;
@@ -358,6 +387,7 @@ section {
     width: 100%;
     text-align: center;
     background-color: hsla(0, 0%, 0%, 0.5);
+    color: whitesmoke;
     position: absolute;
     font-family: var(--paragraph-font);
 }
@@ -428,6 +458,7 @@ footer {
     justify-content: center;
     text-align: center;
     flex-direction: column;
+    color: whitesmoke;
     background-color: var(--main-color);
     gap: 5px;
     height: 4rem;
