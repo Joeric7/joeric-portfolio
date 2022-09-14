@@ -3,8 +3,11 @@ const arrowForward = document.getElementById('arrow-forward');
 const imgContainer = document.querySelector('.img-container');
 const slide = {
     node: document.getElementById('toggle-slide'),
+    child: document.querySelector('#toggle-slide > div'),
+    ball: document.querySelector('#toggle-slide > div > span'),
     state: true
 }
+
 
 let imgList = document.querySelectorAll('.img-container img');
 
@@ -48,12 +51,12 @@ let autoSlide = setInterval(animateForward, 5000);
 
 const toggleAutoSlide = () => {
     if (slide.state === true) {
+        slide.ball.style.translate = '0';
         clearInterval(autoSlide);
-        slide.node.style.backgroundColor = 'gray';
         slide.state = false;
     } else {
         autoSlide = setInterval(animateForward, 5000);
-        slide.node.style.backgroundColor = '';
+        slide.ball.style.translate = '100%';
         slide.state = true;
     }
     console.log(slide.state)

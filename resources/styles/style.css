@@ -18,14 +18,10 @@
     scroll-behavior: smooth;
     scroll-padding-top: 4rem;
     color-scheme: dark;
+    transition: all 2s;
 }
 
 /* global styles */
-
-body {
-    background-attachment: fixed;
-    background-size: contain;
-}
 
 p {
     max-width: 60ch;
@@ -156,7 +152,29 @@ section {
     position: relative;
     color: whitesmoke;
     overflow: hidden;
-    transition: all 500ms;
+    /* transition: all 500ms; */
+}
+
+.options-menu button > div {
+    width: 3rem;
+    height: 1.5rem;
+    display: inline-block;
+    background: #181818;
+    outline: 3px solid #181818;
+    border-radius: 100vmax;
+    margin-left: 1rem;
+    transition: all .5s;
+    position: relative;
+}
+
+.options-menu button > div > span {
+    position: absolute;
+    height: 100%;
+    aspect-ratio: 1;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    left: 0;
+    transition: all .5s;
 }
 
 .options-menu button:hover {
